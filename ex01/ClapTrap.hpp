@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:14:02 by mahmoud           #+#    #+#             */
-/*   Updated: 2024/08/27 20:20:28 by mahmoud          ###   ########.fr       */
+/*   Updated: 2024/08/28 09:44:34 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class ClapTrap
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     ClapTrap( std::string name );
+    ClapTrap();
     ~ClapTrap();
     ClapTrap(const ClapTrap &initTemplate);
     ClapTrap &operator=(const ClapTrap& copyTemplate);

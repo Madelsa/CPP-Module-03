@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 20:21:01 by mahmoud           #+#    #+#             */
-/*   Updated: 2024/08/27 21:18:49 by mahmoud          ###   ########.fr       */
+/*   Updated: 2024/08/28 09:47:22 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,30 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
     std::cout << "ScavTrap constructor called." << std::endl;
 }
 
+ScavTrap::ScavTrap()
+{
+    std::cout << "ScavTrap constructor called." << std::endl;
+}
+
+
 ScavTrap::~ScavTrap() {
     std::cout << "ScavTrap destructor called." << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &copyTemplate) : ClapTrap(copyTemplate)
+{
+    *this = copyTemplate;
+    std::cout << "ScavTrap copy constructor called" << std::endl;
+}
+
+ScavTrap&   ScavTrap::operator=( const ScavTrap &initTemplate ) 
+{
+    std::cout << "ScavTrap copy assignment operator called" << std::endl;
+    this->name = initTemplate.name;
+    this->hitPoints = initTemplate.hitPoints;
+    this->energyPoints = initTemplate.energyPoints;
+    this->attackDamage = initTemplate.attackDamage;
+    return *this;
 }
 
 void    ScavTrap::attack( std::string const& target ) 

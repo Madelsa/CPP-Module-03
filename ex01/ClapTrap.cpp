@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 19:14:01 by mahmoud           #+#    #+#             */
-/*   Updated: 2024/08/27 20:27:01 by mahmoud          ###   ########.fr       */
+/*   Updated: 2024/08/28 09:47:48 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,20 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &rhs)
+ClapTrap::ClapTrap()
 {
-    *this = rhs;
+    std::cout << "ClapTrap constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copyTemplate)
+{
+    *this = copyTemplate;
     std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap&   ClapTrap::operator=( const ClapTrap &initTemplate ) 
 {
+    std::cout << "ClapTrap copy assignment operator called" << std::endl;
     this->name = initTemplate.name;
     this->hitPoints = initTemplate.hitPoints;
     this->energyPoints = initTemplate.energyPoints;

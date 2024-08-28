@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mahmoud <mahmoud@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mabdelsa <mabdelsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 21:05:16 by mahmoud           #+#    #+#             */
-/*   Updated: 2024/08/27 21:09:57 by mahmoud          ###   ########.fr       */
+/*   Updated: 2024/08/28 09:48:28 by mabdelsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,26 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name)
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap destructor called." << std::endl;
+}
+
+FragTrap::FragTrap()
+{
+    std::cout << "FragTrap constructor called." << std::endl;
+}
+FragTrap::FragTrap(const FragTrap &copyTemplate) : ClapTrap(copyTemplate)
+{
+    *this = copyTemplate;
+    std::cout << "FragTrap copy constructor called" << std::endl;
+}
+
+FragTrap&   FragTrap::operator=( const FragTrap &initTemplate ) 
+{
+    std::cout << "FragTrap copy assignment operator called" << std::endl;
+    this->name = initTemplate.name;
+    this->hitPoints = initTemplate.hitPoints;
+    this->energyPoints = initTemplate.energyPoints;
+    this->attackDamage = initTemplate.attackDamage;
+    return *this;
 }
 
 void    FragTrap::highFivesGuys( void ) 
